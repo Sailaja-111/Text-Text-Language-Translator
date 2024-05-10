@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Translation App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; 
+            background: linear-gradient(to right, #87ceeb, #ff69b4); 
+        }
+
+        #video-background {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1; 
+        }
+
+        nav {
+            background: linear-gradient(to right, #6495ed, #ff1493); 
+            padding: 10px;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            width: 100vw; 
+            height: 100vh; 
+        }
+
+        .column {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            justify-content: center; 
+        }
+
+        .form-container {
+            background: linear-gradient(to right, #87cefa, #ff7f50); 
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+            width: 90%; /* Set width to 90% of parent */
+            max-width: 600px; /* Limit max-width */
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 36px;
+            margin-bottom: 30px;
+            text-align: center; /* Center the heading */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+        }
+
+        textarea {
+            width: 100%;
+            height: 300px; /* Set height to accommodate 20 lines */
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 2px solid #ff69b4; 
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px; 
+            resize: vertical; 
+            background: linear-gradient(to right, #00bfff, #ffb6c1); 
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #ff1493; 
+        }
+
+        select {
+            width: calc(100% - 20px); /* Adjust width to fit the container */
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 2px solid #ff69b4; /* Set border color */
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px; /* Set font size */
+            background: linear-gradient(to right, #00bfff, #ffb6c1); /* Set colorful select gradient */
+        }
+
+        select:focus {
+            outline: none;
+            border-color: #ff1493; 
+        }
+
+        .button {
+            width: 100%; 
+            padding: 15px 0; 
+            background: linear-gradient(to right, #6495ed, #ff69b4); /* Set colorful button gradient */
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 16px; /* Set font size */
+        }
+
+        .button:hover {
+            background: linear-gradient(to right, #ff69b4, #6495ed);
+        }
+    </style>
+</head>
+<body>
+
+<video id="video-background" autoplay muted loop>
+    <source src="home.mp4" type="video/mp4">
+    <!-- Your browser does not support the video tag. -->
+</video>
+
+<nav>
+    <div>
+        <a href="index.php">Home</a>
+        <a href="history.html">History</a>
+    </div>
+    <div>
+        <a href="homepage.html">Logout</a>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="column">
+        <div class="form-container">
+            <h1>Input the Text</h1>
+            <textarea name="inputText" placeholder="Enter text to translate" required></textarea>
+        </div>
+    </div>
+    <div class="column">
+        <div class="form-container">
+            <h1>Translated Text</h1>
+            <select name="translationOptions">
+                <option value="option1">Telugu</option>
+                <option value="option2">Hindi</option>
+                <option value="option3">English</option>
+            </select><br>
+            <textarea name="translatedText" placeholder="Translated text will appear here" readonly></textarea><br>
+            <button class="button">Translate</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
