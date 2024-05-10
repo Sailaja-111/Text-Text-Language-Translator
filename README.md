@@ -1,6 +1,6 @@
 # Text-Text-Language-Translator
 1.All the PHP files are related to our Frontend and Database Connectivity.
-2.All the IPYNB kernels are our machine learning models .
+2.All the IPYNB kernels are our machine learning models.
 3.All the Python files are Pytorch Transformers(Not used in final project yet Implemented)
 4.Details of our connectivity : Database : login_register
 5.Table Details : structure of History Table
